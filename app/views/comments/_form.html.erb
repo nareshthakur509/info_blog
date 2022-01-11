@@ -1,11 +1,11 @@
 <div class="row mt-3 p-2">
-<h3>Add a Comment</h3>
+<h4>Add a Comment</h4>
 <div class="comment-form p-3">
 <%= form_with model: [commentable,local] do |f| %>
 
   <div class="form-group">
     <%= f.rich_text_area :body , placeholder:"Say Something..." , class: "reply-form-#{commentable.id}" ,id: f.object.object_id , method: :patch %>
-    <%= f.submit "Post" , class: "btn btn-dark float-right" %>
+    <%= f.submit "Post" , class: "btn btn-dark float-right mt-2" %>
   </div>
 <% end %>
 </div>

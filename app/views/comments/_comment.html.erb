@@ -1,13 +1,14 @@
-<div class="comment-container" id="comment-<%= comment.id %>">
+<br><br><div class="comment-container bg-light rounded-3 shadow-3" id="comment-<%= comment.id %>">
     <div class="container">
     <%= render 'comments/comments' , comment: comment ,local: Comment.new %>
 
     <% unless comment.reply %>
         <div class="row">
             <div class="col-4">
+
             </div>
             <div class="col-8">
-                <div class="comment-form-nested">
+                <div class="comment-form-nested shadow bg-white bd-dark rounded-3">
                   <%= render 'comments/form' , commentable: comment , local: Comment.new %>
                 </div>
             </div>
