@@ -1,0 +1,32 @@
+<div style="width:100%; height:250px;overflow-x:hidden;">
+    <%= image_tag(@post.banner , style:'width:100%') %>
+</div>
+<div class="container mt-3">
+  <div class="row">
+     <div class="p-3"  style="background: linear-gradient(to bottom, #d3d3d3 0%, #ff99cc 100%);">
+        <h2 class="display-4">
+        <%= link_to @post.title , root_path , class:"nav-link" %>
+        </h2>
+        <p class="hehe">
+          <%= @post.updated_at.strftime("%A,%B,%e,%Y") %> by <%= @post.user.username %> | <%= pluralize(@post.views,"view") %>
+        </p>
+        <hr class="my-4">
+        <div class="body">
+              <%= @post.body %>
+        </div>
+     </div>
+  <div>
+</div>
+
+
+
+
+<div class="container">
+<%= render 'comments/form', commentable: @post, local: Comment.new %>
+</div>
+<div class="comment-pane">
+<% @comments.each do |comment| %>
+    <%= render comment %>
+<%end %>
+</div>
+
