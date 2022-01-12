@@ -4,10 +4,10 @@
 
     <% unless comment.reply %>
         <div class="row">
-            <div class="col-4">
+            <div class="col-5">
 
             </div>
-            <div class="col-8">
+            <div class="col-7">
                 <div class="comment-form-nested shadow bg-white bd-dark rounded-3">
                   <%= render 'comments/form' , commentable: comment , local: Comment.new %>
                 </div>
