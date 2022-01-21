@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_01_10_121222) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_121222) do
     t.text "edit_history", default: ""
     t.integer "commentable_id"
     t.string "commentable_type"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.boolean "reply", default: false
     t.integer "comment_number"
     t.datetime "created_at", precision: 6, null: false
@@ -76,7 +79,7 @@ ActiveRecord::Schema.define(version: 2022_01_10_121222) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.integer "views", default: 0
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
